@@ -31,7 +31,7 @@ def office365(registry, xml_parent, data):
     ]
 
     events = hook_data.get('events', {})
-    for key in events.keys():
+    for key in sorted(events.keys()):
       mapping.append(
         ('', 'notify{}'.format(to_camel_case(key, True)), 'true' if events[key] else 'false')
       )
